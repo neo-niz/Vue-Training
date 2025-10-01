@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import CounterButton from './componants/CounterButton.vue';
 import UserCard from './componants/UserCard.vue';
-
+import CardItem from './componants/CardItem.vue';
 const age = ref(0)
 </script>
 
@@ -25,6 +25,13 @@ export default {bß
     <div class="box">
       <CounterButton @increment="() => age ++" />
     </div>
+
+
+    <CardItem>
+      <h2>Title</h2>
+      <p>Some description</p>
+    </CardItem>
+
   </div>
 </template>
 
