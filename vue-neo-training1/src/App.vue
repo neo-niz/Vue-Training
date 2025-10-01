@@ -5,26 +5,36 @@
 </script> -->
 
 <script>
-export default{
-  data(){
+export default {
+  data() {
     return {
-      title: "Hello vue!"
+      message: "Hello vue!",
+      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzKRmGWc6mGNqQ9_9bP0tU1RoI-q58S7qILQ&s"
     }
   }
 }
 </script>
 
 <template>
-  <h1 class="center">
-    {{ title }}
-  </h1>
+  <div class="center">
+    <div>
+      <h1>
+        {{ message }}
+      </h1>
+
+    </div>
+    <div>
+      <img :src="imageUrl" :alt="title">
+
+    </div>
+  </div>
 </template>
 
 <style scoped>
-.center{
+.center {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: large;
 }
-
 </style>
