@@ -8,8 +8,8 @@
 export default {
   data() {
     return {
-      message: "Hello vue!",
-      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzKRmGWc6mGNqQ9_9bP0tU1RoI-q58S7qILQ&s"
+      todo: ["Setup Machine","Install deps","Run Project"],
+      // todo: []
     }
   }
 }
@@ -17,16 +17,18 @@ export default {
 
 <template>
   <div class="center">
-    <div>
-      <h1>
-        {{ message }}
-      </h1>
-
+    <div v-if="todo.length > 0"> 
+      <p :key="i" v-for="(val,i) in todo" >
+          {{ val }}
+      </p>
     </div>
-    <div>
-      <img :src="imageUrl" :alt="title">
-
+  
+    <div v-else> 
+      <p>
+        No Tasks yet
+      </p>
     </div>
+
   </div>
 </template>
 
