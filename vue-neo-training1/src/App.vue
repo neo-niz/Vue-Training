@@ -1,12 +1,15 @@
 <script setup>
-import { reactive, ref } from 'vue';
+import { computed, reactive, ref } from 'vue';
 
-const name = ref("John")
 
 const form = reactive({
   firstName: "John",
   lastName: "Deo",
 })
+
+const fullName = computed(()=>{
+    return form.firstName + " "  + form.lastName
+} ) 
 
 </script>
 
@@ -23,17 +26,14 @@ export default {
 <template>
   <div class="center">
     <div class="box">
-      <input v-model="name" placeholder="Enter Name">
-    </div>
-
-    <div v-if="name&&true" class="box">
-      <p> Hello, {{ name }}</p>
+      <input v-model="form.firstName" placeholder="Enter First Name">
+      <input v-model="form.lastName" placeholder="Enter Last Name">
     </div>
 
 
 
     <div class="box">
-      <p> {{ form.firstName }}  {{ form.lastName }}</p>
+      <p> Hello {{ fullName }}</p>
     </div>
 
   </div>
