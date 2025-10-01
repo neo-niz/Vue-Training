@@ -1,20 +1,17 @@
 <script setup>
-import { computed, reactive, ref } from 'vue';
+import {  ref, watch } from 'vue';
 
 
-const form = reactive({
-  firstName: "John",
-  lastName: "Deo",
+const search=  ref()
+
+watch(search,()=>{
+  console.log("Searching for ... " + search.value)
 })
-
-const fullName = computed(()=>{
-    return form.firstName + " "  + form.lastName
-} ) 
 
 </script>
 
 <!-- <script>
-export default {
+export default {bß
   data() {
   return {
     n: 0
@@ -26,16 +23,8 @@ export default {
 <template>
   <div class="center">
     <div class="box">
-      <input v-model="form.firstName" placeholder="Enter First Name">
-      <input v-model="form.lastName" placeholder="Enter Last Name">
+      <input v-model="search" placeholder="Search">
     </div>
-
-
-
-    <div class="box">
-      <p> Hello {{ fullName }}</p>
-    </div>
-
   </div>
 </template>
 
