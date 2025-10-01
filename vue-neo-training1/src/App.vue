@@ -8,8 +8,7 @@
 export default {
   data() {
     return {
-      todo: ["Setup Machine","Install deps","Run Project"],
-      // todo: []
+      n: 0
     }
   }
 }
@@ -17,16 +16,18 @@ export default {
 
 <template>
   <div class="center">
-    <div v-if="todo.length > 0"> 
-      <p :key="i" v-for="(val,i) in todo" >
-          {{ val }}
-      </p>
+    <div class="box">
+      You clicked {{ n }} {{ n === 1 ? 'time' : 'times' }}
     </div>
-  
-    <div v-else> 
-      <p>
-        No Tasks yet
-      </p>
+
+    <div class="box">
+      <button @click="n++">
+        Add
+      </button>
+
+      <button @click="n = 0 ">
+        Reset
+      </button>
     </div>
 
   </div>
@@ -35,8 +36,17 @@ export default {
 <style scoped>
 .center {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  margin: 10px;
   align-items: center;
   font-size: large;
+}
+
+.box {
+  display: flex;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
 }
 </style>
