@@ -1,33 +1,39 @@
-<!-- <script setup>
-  import { ref } from 'vue';
-  const message = ref("Hello vue!")
-  
-</script> -->
+<script setup>
+import { reactive, ref } from 'vue';
 
-<script>
+const name = ref("John")
+
+const form = reactive({
+  firstName: "John",
+  lastName: "Deo",
+})
+
+</script>
+
+<!-- <script>
 export default {
   data() {
-    return {
-      n: 0
+  return {
+    n: 0
     }
   }
 }
-</script>
+</script> -->
 
 <template>
   <div class="center">
     <div class="box">
-      You clicked {{ n }} {{ n === 1 ? 'time' : 'times' }}
+      <input v-model="name" placeholder="Enter Name">
     </div>
 
-    <div class="box">
-      <button @click="n++">
-        Add
-      </button>
+    <div v-if="name&&true" class="box">
+      <p> Hello, {{ name }}</p>
+    </div>
 
-      <button @click="n = 0 ">
-        Reset
-      </button>
+
+
+    <div class="box">
+      <p> {{ form.firstName }}  {{ form.lastName }}</p>
     </div>
 
   </div>
