@@ -1,8 +1,9 @@
 <script setup>
-import { reactive } from 'vue';
+import { ref } from 'vue';
+import CounterButton from './componants/CounterButton.vue';
 import UserCard from './componants/UserCard.vue';
 
-
+const age = ref(0)
 </script>
 
 <!-- <script>
@@ -18,7 +19,11 @@ export default {bß
 <template>
   <div class="center">
     <div class="box">
-    <UserCard name="John" :age="22"  />
+      <UserCard name="John" :age="age" />
+    </div>
+
+    <div class="box">
+      <CounterButton @increment="() => age ++" />
     </div>
   </div>
 </template>
