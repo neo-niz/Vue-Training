@@ -1,12 +1,8 @@
 <script setup>
 import { reactive } from 'vue';
+import UserCard from './componants/UserCard.vue';
 
 
-const form = reactive({
-  email: "",
-  password: "",
-}
-)
 </script>
 
 <!-- <script>
@@ -22,20 +18,7 @@ export default {bß
 <template>
   <div class="center">
     <div class="box">
-      <form>
-        <label>
-          Email : <input type="email" v-model="form.email"/>
-        </label>
-
-        <label>
-          Password : <input type="password" v-model="form.password" />
-        </label>
-        
-      </form>
-    </div>
-    <div class="box">
-      <p v-if="form.email&&true">Email : {{ form.email }}.   </p>
-      <p v-if="form.password&&true"> Pass : {{ form.password }}</p>
+    <UserCard name="John" :age="22"  />
     </div>
   </div>
 </template>
