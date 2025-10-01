@@ -8,16 +8,23 @@
 export default{
   data(){
     return {
-      message: "Hello vue!"
+      title: "Hello vue!"
     }
   }
 }
 </script>
 
 <template>
-  <p>
-    {{ message }}
-  </p>
+  <h1 class="center">
+    {{ title }}
+  </h1>
 </template>
 
-<style scoped></style>
+<style scoped>
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+</style>
