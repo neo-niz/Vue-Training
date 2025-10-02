@@ -1,10 +1,10 @@
 <script setup>
 import { ref } from 'vue';
-// import CounterButton from './componants/CounterButton.vue';
-// import UserCard from './componants/UserCard.vue';
+import CounterButton from './componants/CounterButton.vue';
+import UserCard from './componants/UserCard.vue';
 // import CardItem from './componants/CardItem.vue';
-// const age = ref(0)
-const isActive = ref(false)
+const age = ref(0)
+// const isActive = ref(false)
 </script>
 
 <!-- <script>
@@ -20,27 +20,30 @@ export default {bß
 <template>
   <div class="center">
 
-    <button @click="() => isActive = !isActive" :class="{active: isActive}" >Click me</button>
+    <!-- <button @click="() => isActive = !isActive" :class="{active: isActive}" >Click me</button> -->
 
-    <!-- <div class="box">
+    <div v-if="age<20"  class="box">
       <UserCard name="John" :age="age" />
     </div>
 
     <div class="box">
-      <CounterButton @increment="() => age ++" />
+      <CounterButton @increment="() => age++" />
     </div>
-
+   
+    <!-- 
 
     <CardItem>
       <h2>Title</h2>
       <p>Some description</p>
     </CardItem> -->
 
+
+
   </div>
 </template>
 
 <style scoped>
-.active{
+.active {
 
   background-color: green;
 }

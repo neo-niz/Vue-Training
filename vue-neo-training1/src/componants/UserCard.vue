@@ -11,7 +11,17 @@
         }
     })
 
+    import { onMounted, onUnmounted, onUpdated } from 'vue';
 
+    onMounted(()=>{
+      console.log('Mounted')
+    })
+    onUpdated(()=>{
+      console.log("Updated")
+    })
+    onUnmounted(()=>{
+      console.log("Destroyed")
+    })
 </script>
 <template>
     <div>
