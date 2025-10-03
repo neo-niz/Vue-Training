@@ -2,23 +2,33 @@
 </script>
 
 <template>
-  <main class="space-x-24 min-h-screen flex items-center justify-center bg-gray-50 p-8 m-12" >
-    <article class="bg-white shadow-lg rounded-3xl p-6">
-      <h1 class="text-indigo-800 text-4xl font-bold tracking-wide">
-        I am using tailwind
-      </h1>
-      <p class=" font-medium text-gray-800">
-         This is a simple article page built with Vue 3 and Tailwind CSS. 
-        The heading, paragraph, and button each use different font sizes, 
-        weights, and colors
-      </p>
-      <button class=" bg-rose-400 hover:bg-green-950 rounded-xl shadow-lg font-serif transition">
-        Click me 
-      </button>
+  <main class="min-h-screen flex items-center justify-center bg-gray-100">
+    <div class="">
 
-    </article>
+      <div class="bg-white w-96 h-[90] p-6 m-6 shadow-lg rounded-3xl flex flex-col justify-between">
+        <div class="p-4">
+
+          <h1 class="text-indigo-800 text-4xl font-bold tracking-wide">
+            I am using tailwind
+          </h1>
+          <p class=" pt-4 text-gray-800">
+            This is a simple card built with Vue 3 and Tailwind CSS.
+            The heading, paragraph, and button each use different font sizes,
+            weights, and colors
+          </p>
+        </div>
+        <div class="p-4">
+          <button class="p-3 w-28 bg-rose-400 hover:bg-rose-600 rounded-xl shadow-lg text-white font-bold transition">
+            Click me
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
   </main>
+
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
