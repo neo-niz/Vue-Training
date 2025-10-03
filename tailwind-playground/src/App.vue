@@ -1,33 +1,36 @@
 <script setup>
+import BlocTwoCard from './components/blocs/blocTwoCard.vue';
+
 </script>
 
 <template>
-  <main class="min-h-screen flex items-center justify-center bg-gray-100">
-    <div class="">
+  <div class="min-h-screen flex flex-col bg-gray-100">
+    <header class="flex bg-rose-400 justify-between p-3 items-center shadow-lg ">
+      <h1 class="text-3xl text-white font-bold">
+        Tailwind playground
+      </h1>
+    </header>
 
-      <div class="bg-white w-96 h-[90] p-6 m-6 shadow-lg rounded-3xl flex flex-col justify-between">
-        <div class="p-4">
-
-          <h1 class="text-indigo-800 text-4xl font-bold tracking-wide">
-            I am using tailwind
-          </h1>
-          <p class=" pt-4 text-gray-800">
-            This is a simple card built with Vue 3 and Tailwind CSS.
-            The heading, paragraph, and button each use different font sizes,
-            weights, and colors
-          </p>
-        </div>
-        <div class="p-4">
-          <button class="p-3 w-28 bg-rose-400 hover:bg-rose-600 rounded-xl shadow-lg text-white font-bold transition">
-            Click me
-          </button>
-
-        </div>
-
+    <main class="flex-1 p-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+        <BlocTwoCard />
+        <BlocTwoCard />
+        <BlocTwoCard />
       </div>
-    </div>
 
-  </main>
+    </main>
+
+    <footer class="bg-black flex justify-between text-gray-200 text-left p-4">
+      <p>
+
+        This is a tailwind playground. Made to explore tailwind...
+      </p>
+      <p>
+        @NIZA
+      </p>
+    </footer>
+
+  </div>
 
 </template>
 
