@@ -9,7 +9,7 @@
 </template>
 
 
-<style>
+<style scoped>
 .card {
   background: #fff;
   border-radius: 8px;

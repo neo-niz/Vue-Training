@@ -1,11 +1,11 @@
 <script setup>
 const props = defineProps(['task'])
-const emit = defineEmits(['deleteTask','toogleTask'])
+const emit = defineEmits(['deleteTask','toggleTask'])
 function handleDeleteTask() {
     emit('deleteTask', props.task.id)
 }
 function handleCheckChange(){
-    emit('toogleTask', props.task.id)
+    emit('toggleTask', props.task.id)
 }
 </script>
 <template>
@@ -25,6 +25,6 @@ function handleCheckChange(){
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 8 12px;
+    padding: 8px 12px;
 }
 </style>

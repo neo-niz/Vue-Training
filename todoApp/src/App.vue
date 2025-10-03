@@ -23,7 +23,7 @@ function handleDeleteTask(id){
   todoList.value = todoList.value.filter((x)=>x.id !==id)
 }
 
-function handleToogleTask(id){
+function handletoggleTask(id){
   const todo = todoList.value.find(x => x.id === id)
   if (todo) {
     todo.isChecked = !todo.isChecked
@@ -37,7 +37,7 @@ function handleToogleTask(id){
     <TodoCard class="center">
       <TodoHeader />
       <TodoInput @addTask="handleAddTask" />
-      <TodoList @toogleTask="handleToogleTask" @deleteTask="handleDeleteTask" :todoList="todoList"/>
+      <TodoList @toggleTask="handletoggleTask" @deleteTask="handleDeleteTask" :todoList="todoList"/>
     </TodoCard>
   </div>
 </template>
