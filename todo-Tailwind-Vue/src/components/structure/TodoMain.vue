@@ -1,11 +1,26 @@
 <script setup>
-import { ref } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 import TodoHeader from '../Todo/TodoHeader.vue';
 import TodoInput from '../Todo/TodoInput.vue';
 import TodoList from '../Todo/TodoList.vue';
 import TodoCard from '../Todo/TodoCard.vue';
 
 const todoList = ref([])
+const STORAGE_KEY = "todo-list"
+
+onMounted(() => {
+    console.log("Todo App Loaded...")
+    const saved = localStorage.getItem(STORAGE_KEY)
+    if (saved) {
+        todoList.value = JSON.parse(saved)
+    }
+})
+
+
+watch(todoList, (newList) => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(newList))
+}, { deep: true })
+
 function generateId() {
     return Date.now().toString(36) + Math.random().toString(36).substring(2, 9)
 }

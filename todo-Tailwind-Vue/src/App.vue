@@ -6,9 +6,21 @@ import ModeButton from './components/structure/ModeButton.vue'
 import todoMain from './components/structure/todoMain.vue'
 
 const isDark = ref(false)
-onMounted(()=>{
+const todoList = ref([])
+const STORAGE_KEY= "todo-list"
+
+onMounted(() => {
   console.log("Todo App Loaded...")
+  const saved = localStorage.getItem(STORAGE_KEY)
+  if (saved) {
+    todoList.value = JSON.parse(saved)
+  }
 })
+
+watch(todoList, (newList) => {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(newList))
+}, { deep: true })
+
 function toggleDark() {
   isDark.value = !isDark.value
 }
