@@ -1,37 +1,64 @@
-<template>
-
-    <div class="bg-white max-w-sm sm:max-w-md md:max-w-lg  p-6 m-6 shadow-lg rounded-3xl  justify-between">
-        <div class="p-4">
-
-            <h1 class="text-indigo-800 text-4xl font-bold tracking-wide">
-                I am using tailwind
-            </h1>
-            <p class=" pt-4 text-gray-800">
-                This is a simple card built with Vue 3 and Tailwind CSS.
-                The heading, paragraph, and button each use different font sizes,
-                weights, and colors
-            </p>
-        </div>
-        <div class="p-4">
-            <button
-                class="p-3 w-28 bg-rose-400 hover:bg-rose-600 rounded-xl
-                hover:outline-2  
-                focus:ring-neutral-400 focus-visible: ring-2 
-                disabled:bg-gray-200 disabled:text-gray-800 disabled:cursor-not-allowed disabled:opacity-40
-                shadow-lg text-white font-bold 
-                transition duration-500">
-                Click me
-            </button>
-
-        </div>
-
-    </div>
-</template>
-
-<script>
-export default {
-
-}
+<script setup>
+defineProps({
+  image: {
+    type: String,
+    required: true,
+  },
+  title: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+})
 </script>
 
-<style></style>
+<template>
+  <div
+    class="bg-white dark:bg-gray-800 
+           max-w-sm sm:max-w-md md:max-w-lg 
+           p-6 m-6 shadow-lg rounded-3xl 
+           justify-between 
+           flex flex-col
+           transition-colors duration-500"
+           
+  >
+    <img
+      :src="image"
+      :alt="title"
+      class="w-full h-48 object-cover rounded-2xl mb-4"
+    />
+
+    <div class="p-4 mt-auto">
+      <h2
+        class="text-indigo-800 dark:text-indigo-300 
+               text-4xl font-bold tracking-wide"
+      >
+        {{ title }}
+      </h2>
+
+      <p class="pt-4 text-gray-800 dark:text-gray-300">
+        {{ description }}
+      </p>
+    </div>
+
+    <div class="p-4 mt-auto">
+      <button
+        class="p-3 w-28 
+               bg-rose-400 hover:bg-rose-500 
+               dark:bg-rose-500 dark:hover:bg-rose-400 
+               rounded-xl shadow-lg 
+               text-white font-bold 
+               hover:outline-none focus:ring-2 focus:ring-rose-300 
+               disabled:bg-gray-300 disabled:text-gray-600 disabled:cursor-not-allowed disabled:opacity-50 
+               transition-all duration-300"
+      >
+        Read more
+      </button>
+    </div>
+  </div>
+</template>
+
+<style scoped></style>
