@@ -1,10 +1,10 @@
 <script setup>
 import { ref } from 'vue';
-import CounterButton from './componants/CounterButton.vue';
-import UserCard from './componants/UserCard.vue';
+// import CounterButton from './componants/CounterButton.vue';
+// import UserCard from './componants/UserCard.vue';
 // import CardItem from './componants/CardItem.vue';
-const age = ref(0)
-// const isActive = ref(false)
+// const age = ref(0)
+const isActive = ref(false)
 </script>
 
 <!-- <script>
@@ -18,44 +18,40 @@ export default {bß
 </script> -->
 
 <template>
-  <div class="main">
+  <div class="center">
 
-    <!-- <button @click="() => isActive = !isActive" :class="{active: isActive}" >Click me</button> -->
+    <button @click="() => isActive = !isActive" :class="{active: isActive}" >Click me</button>
 
-    <div v-if="age<20"  class="box">
+    <!-- <div class="box">
       <UserCard name="John" :age="age" />
     </div>
 
     <div class="box">
-      <CounterButton @increment="() => age++" />
+      <CounterButton @increment="() => age ++" />
     </div>
-   
-    <!-- 
+
 
     <CardItem>
       <h2>Title</h2>
       <p>Some description</p>
     </CardItem> -->
 
-
-
   </div>
 </template>
 
 <style scoped>
-.active {
+.active{
 
   background-color: green;
 }
 
 .center {
-  background-color: #f1f5f9;
-  min-height: 100svh;
-  background: #f1f5f9;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  padding: 16px;
+  margin: 10px;
+  align-items: center;
+  font-size: large;
 }
 
 .box {

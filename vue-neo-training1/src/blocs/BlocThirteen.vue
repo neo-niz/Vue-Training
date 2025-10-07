@@ -18,7 +18,7 @@ export default {bß
 </script> -->
 
 <template>
-  <div class="main">
+  <div class="center">
 
     <!-- <button @click="() => isActive = !isActive" :class="{active: isActive}" >Click me</button> -->
 
@@ -49,13 +49,12 @@ export default {bß
 }
 
 .center {
-  background-color: #f1f5f9;
-  min-height: 100svh;
-  background: #f1f5f9;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  padding: 16px;
+  margin: 10px;
+  align-items: center;
+  font-size: large;
 }
 
 .box {
