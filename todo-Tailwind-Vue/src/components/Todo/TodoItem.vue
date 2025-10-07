@@ -1,5 +1,10 @@
 <script setup>
-const props = defineProps(['task'])
+const props = defineProps({
+  task: {
+    type: String,
+    required: true,
+  },
+})
 const emit = defineEmits(['deleteTask', 'toggleTask'])
 function handleDeleteTask() {
   emit('deleteTask', props.task.id)

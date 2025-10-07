@@ -40,7 +40,7 @@
 </template>
 
 <script setup>
-const emit = defineEmits(['toogleDark'])
+const emit = defineEmits(['toogleDark', 'toggleDark'])
 
 function handleClick() {
   emit('toggleDark')

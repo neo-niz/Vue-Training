@@ -1,6 +1,10 @@
 <script setup>
 import TodoItem from './TodoItem.vue'
-defineProps(['todoList'])
+defineProps({
+    todoList: {
+        required: true
+    }
+})
 const emit = defineEmits(['deleteTask', 'toggleTask'])
 function handleDeleteTask(id) {
   emit('deleteTask', id)
