@@ -1,5 +1,6 @@
 import typography from '@tailwindcss/typography'
 
+
 export default {
   content: [
     "./index.html",
@@ -19,6 +20,6 @@ export default {
     },
   },
   plugins: [
-    typography
+    typography,
   ],
 }
