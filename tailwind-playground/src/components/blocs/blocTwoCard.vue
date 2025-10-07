@@ -1,17 +1,8 @@
 <script setup>
 defineProps({
-  image: {
-    type: String,
-    required: true,
-  },
-  title: {
-    type: String,
-    required: true,
-  },
-  description: {
-    type: String,
-    required: true,
-  },
+  image: { type: String, required: true },
+  title: { type: String, required: true },
+  description: { type: String, required: true },
 })
 </script>
 
@@ -20,10 +11,8 @@ defineProps({
     class="bg-white dark:bg-gray-800 
            max-w-sm sm:max-w-md md:max-w-lg 
            p-6 m-6 shadow-lg rounded-3xl 
-           justify-between 
-           flex flex-col
+           flex flex-col justify-between
            transition-colors duration-500"
-           
   >
     <img
       :src="image"
@@ -31,18 +20,10 @@ defineProps({
       class="w-full h-48 object-cover rounded-2xl mb-4"
     />
 
-    <div class="p-4 mt-auto">
-      <h2
-        class="text-indigo-800 dark:text-indigo-300 
-               text-4xl font-bold tracking-wide"
-      >
-        {{ title }}
-      </h2>
-
-      <p class="pt-4 text-gray-800 dark:text-gray-300">
-        {{ description }}
-      </p>
-    </div>
+    <article class="p-4 flex-1 prose prose-sm dark:prose-invert">
+      <h2>{{ title }}</h2>
+      <p>{{ description }}</p>
+    </article>
 
     <div class="p-4 mt-auto">
       <button
