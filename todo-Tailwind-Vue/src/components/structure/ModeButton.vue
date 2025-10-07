@@ -1,7 +1,7 @@
 <template>
   <!-- Floating dark mode toggle -->
   <button
-    class="fixed bottom-20 right-6 z-50 h-12 w-12 rounded-full bg-rose-500 dark:bg-gray-700 text-white shadow-lg shadow-rose-400/30 dark:shadow-black/50 grid place-items-center transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-rose-500 dark:focus-visible:ring-offset-gray-800"
+    class="fixed right-6 bottom-20 z-50 grid h-12 w-12 place-items-center rounded-full bg-rose-500 text-white shadow-lg shadow-rose-400/30 transition-all duration-300 hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-rose-500 active:scale-95 dark:bg-gray-700 dark:shadow-black/50 dark:focus-visible:ring-offset-gray-800"
     @click="handleClick"
   >
     <!-- Sun icon (light mode) -->

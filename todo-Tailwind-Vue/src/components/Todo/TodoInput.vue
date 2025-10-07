@@ -11,10 +11,10 @@ function handleClick() {
 }
 </script>
 <template>
-  <div class="p-4 flex flex-row justify-between">
+  <div class="flex flex-row justify-between p-4">
     <input
       v-model="value"
-      class="p-2 text-black dark:text-gray-300 flex-1 border-black border-1 rounded-2xl"
+      class="flex-1 rounded-2xl border-1 border-black p-2 text-black dark:text-gray-300"
       placeholder="What needs to be done?"
     />
     <CoolButton class="ml-4" @click="handleClick">Add</CoolButton>

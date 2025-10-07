@@ -47,7 +47,7 @@ function handletoggleTask(id) {
 </script>
 
 <template>
-  <div class="flex-1 p-6 m-auto w-full max-w-xl flex flex-col gap-4">
+  <div class="m-auto flex w-full max-w-xl flex-1 flex-col gap-4 p-6">
     <TodoCard>
       <TodoHeader />
       <TodoInput @add-task="handleAddTask" />

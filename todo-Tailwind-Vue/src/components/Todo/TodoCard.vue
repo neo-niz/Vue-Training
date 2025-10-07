@@ -2,9 +2,9 @@
 
 <template>
   <div
-    class="bg-white dark:bg-gray-800 p-6 m-6 shadow-lg rounded-3xl flex flex-col justify-between transition-colors duration-300"
+    class="m-6 flex flex-col justify-between rounded-3xl bg-white p-6 shadow-lg transition-colors duration-300 dark:bg-gray-800"
   >
-    <slot></slot>
+    <slot> </slot>
   </div>
 </template>
 

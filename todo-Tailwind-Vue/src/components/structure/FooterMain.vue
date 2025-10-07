@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-gray-900 flex textarea-s justify-between text-gray-300 text-left p-4">
+  <footer class="textarea-s flex justify-between bg-gray-900 p-4 text-left text-gray-300">
     <p>This is a tailwind todo app</p>
     <p>@NIZA</p>
   </footer>

@@ -3,35 +3,41 @@ import { defineConfig, globalIgnores } from 'eslint/config'
 import globals from 'globals'
 import js from '@eslint/js'
 import pluginVue from 'eslint-plugin-vue'
-import pluginOxlint from 'eslint-plugin-oxlint'
-import prettier from '@vue/eslint-config-prettier' // disables conflicting rules
+import pluginPrettier from 'eslint-plugin-prettier'
+import prettier from 'eslint-config-prettier'
 
 export default defineConfig([
-  // Which files ESLint should check
+  // Files ESLint should lint
   {
-    name: 'app/files-to-lint',
-    files: ['**/*.{js,mjs,jsx,vue}'],
+    files: ['**/*.{js,jsx,ts,tsx,vue}'],
   },
 
-  // Which paths to ignore
-  globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
+  // Ignore build and test output
+  globalIgnores(['**/dist/**', '**/node_modules/**', '**/coverage/**']),
 
-  // Browser globals
+  // Global language options
   {
     languageOptions: {
       globals: globals.browser,
     },
   },
 
-  // Core JS recommendations
+  // JavaScript recommended rules
   js.configs.recommended,
 
-  // Vue 3 recommendations (composition API friendly)
+  // Vue 3 recommended rules
   ...pluginVue.configs['flat/recommended'],
 
-  // Oxlint optional high-performance rules
-  ...pluginOxlint.configs['flat/recommended'],
+  // Prettier plugin (integrate Prettier with ESLint)
+  {
+    plugins: {
+      prettier: pluginPrettier,
+    },
+    rules: {
+      'prettier/prettier': 'error',
+    },
+  },
 
-  // Disable ESLint rules that conflict with Prettier
+  // Disable ESLint rules that conflict with Prettier formatting
   prettier,
 ])

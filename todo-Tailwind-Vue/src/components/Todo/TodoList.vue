@@ -1,9 +1,9 @@
 <script setup>
 import TodoItem from './TodoItem.vue'
 defineProps({
-    todoList: {
-        required: true
-    }
+  todoList: {
+    required: true,
+  },
 })
 const emit = defineEmits(['deleteTask', 'toggleTask'])
 function handleDeleteTask(id) {
@@ -19,7 +19,7 @@ function handleCheckChange(id) {
       <TodoItem :task="value" @toggle-task="handleCheckChange" @delete-task="handleDeleteTask" />
     </ul>
   </div>
-  <div v-else class="text-black text-center m-auto p-4 dark:text-gray-300">
+  <div v-else class="m-auto p-4 text-center text-black dark:text-gray-300">
     Todo list is empty !
   </div>
 </template>

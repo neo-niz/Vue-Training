@@ -1,10 +1,9 @@
 <script setup>
 import { onMounted, ref, watch } from 'vue'
-import TodoMain from './components/structure/TodoMain.vue'
 import HeaderMain from './components/structure/HeaderMain.vue'
 import FooterMain from './components/structure/FooterMain.vue'
 import ModeButton from './components/structure/ModeButton.vue'
-
+import TodoMain from './components/structure/TodoMain.vue'
 const isDark = ref(false)
 
 onMounted(() => {
@@ -21,12 +20,10 @@ watch(isDark, (v) => {
 </script>
 
 <template>
-  <div class="min-h-screen flex flex-col dark:bg-gray-900 bg-gray-100">
+  <div class="flex min-h-screen flex-col bg-gray-100 dark:bg-gray-900">
     <HeaderMain />
 
-    <TodoMain />
-
-    <FooterMain />
+    <TodoMain /> <FooterMain />
 
     <ModeButton @toggle-dark="toggleDark" />
   </div>

@@ -14,7 +14,7 @@ function handleCheckChange() {
 }
 </script>
 <template>
-  <li class="flex flex-row max-w-lg">
+  <li class="flex max-w-lg flex-row">
     <input
       :id="props.task.id"
       class="full-w bg-white"
@@ -23,13 +23,13 @@ function handleCheckChange() {
       @change="handleCheckChange"
     />
     />
-    <div class="text-black p-4 flex-1 dark:text-gray-300">
+    <div class="flex-1 p-4 text-black dark:text-gray-300">
       {{ props.task.content }}
     </div>
     <button
       type="button"
       aria-label="Delete"
-      class="inline-flex m-auto h-9 w-9 items-center justify-center rounded-full bg-rose-400 dark:bg-gray-700 text-white shadow-sm transition-colors hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 active:bg-red-600/90 disabled:opacity-50 disabled:cursor-not-allowed"
+      class="m-auto inline-flex h-9 w-9 items-center justify-center rounded-full bg-rose-400 text-white shadow-sm transition-colors hover:bg-red-500 focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:outline-none active:bg-red-600/90 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-gray-700"
       @click="handleDeleteTask"
     >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="h-5 w-5">
