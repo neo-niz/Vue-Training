@@ -22,9 +22,8 @@ watch(isDark, (v) => {
 <template>
   <div class="flex min-h-screen flex-col bg-gray-100 dark:bg-gray-900">
     <HeaderMain />
-
-    <TodoMain /> <FooterMain />
-
+    <TodoMain />
+    <FooterMain />
     <ModeButton @toggle-dark="toggleDark" />
   </div>
 </template>
